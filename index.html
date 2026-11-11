@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Portofolio - Muhammad Yunus</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Animated Mesh Gradient Background */
+        .bg-animated {
+            background: linear-gradient(-45deg, #020617, #1e3a8a, #0f172a, #1d4ed8);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Floating Animation for Elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Section Transitions */
+        .section-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        .section-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+    </style>
+</head>
+<body class="bg-animated flex justify-center items-center py-10 px-4 md:px-0">
+
+    <div class="glass w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[80vh]">
+        
+        <!-- Sidebar Navigation -->
+        <div class="w-full md:w-1/4 bg-slate-900/50 border-r border-blue-900/30 p-6 flex flex-col justify-between">
+            <div>
+                <div class="text-center mb-8 floating">
+                    <div class="w-28 h-28 mx-auto rounded-full bg-blue-600 border-4 border-blue-400/50 flex items-center justify-center text-4xl shadow-[0_0_20px_rgba(59,130,246,0.5)] mb-4 overflow-hidden">
+                        <!-- Ganti dengan URL foto Anda -->
+                        <i class="fa-solid fa-user-astronaut text-white"></i>
+                    </div>
+                    <h1 class="text-xl font-bold text-white tracking-wide">Muhammad Yunus</h1>
+                    <p class="text-blue-400 text-sm mt-1">Software Engineer</p>
+                </div>
+
+                <nav class="space-y-2">
+                    <button onclick="showSection('profil')" id="btn-profil" class="nav-btn w-full text-left px-4 py-3 rounded-xl bg-blue-600/20 text-blue-300 font-medium transition-all hover:bg-blue-600 hover:text-white shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                        <i class="fa-solid fa-id-card w-6"></i> Biodata
+                    </button>
+                    <button onclick="showSection('pengalaman')" id="btn-pengalaman" class="nav-btn w-full text-left px-4 py-3 rounded-xl hover:bg-blue-600/20 text-slate-400 font-medium transition-all hover:text-blue-200">
+                        <i class="fa-solid fa-briefcase w-6"></i> Pengalaman & Skill
+                    </button>
+                    <button onclick="showSection('portofolio')" id="btn-portofolio" class="nav-btn w-full text-left px-4 py-3 rounded-xl hover:bg-blue-600/20 text-slate-400 font-medium transition-all hover:text-blue-200">
+                        <i class="fa-solid fa-code w-6"></i> Portofolio
+                    </button>
+                    <button onclick="showSection('cara-kerja')" id="btn-cara-kerja" class="nav-btn w-full text-left px-4 py-3 rounded-xl hover:bg-blue-600/20 text-slate-400 font-medium transition-all hover:text-blue-200">
+                        <i class="fa-solid fa-gears w-6"></i> Cara Kerja
+                    </button>
+                </nav>
+            </div>
+            
+            <div class="mt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 M. Yunus.</p>
+                <p>PeTIK Jombang</p>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="w-full md:w-3/4 p-8 md:p-12 relative overflow-y-auto">
+
+            <!-- SECTION 1: PROFIL -->
+            <div id="profil" class="section-content active">
+                <h2 class="text-3xl font-bold text-white mb-6 border-b border-blue-500/30 pb-3 inline-block">Tentang Saya</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div class="bg-blue-900/20 p-5 rounded-2xl border border-blue-500/20">
+                        <p class="text-slate-300 leading-relaxed mb-4">
+                            Halo! Saya <strong>Muhammad Yunus</strong>, mahasiswa jurusan <em>Pengembangan Perangkat Lunak</em> di <strong>PeTIK Jombang</strong>. Saya lahir di Bangka Belitung pada tanggal 22 Maret 2008. 
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            Saya adalah individu yang sangat menjunjung tinggi kedisiplinan, detail-oriented, dan memiliki passion mendalam dalam membangun arsitektur web yang modern dan interaktif.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-slate-800/40 p-4 rounded-xl">
+                            <i class="fa-solid fa-cake-candles text-2xl text-blue-400"></i>
+                            <div>
+                                <p class="text-xs text-slate-400">Lahir</p>
+                                <p class="text-white">Bangka Belitung, 22 Mar 2008</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-slate-800/40 p-4 rounded-xl">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-blue-400"></i>
+                            <div>
+                                <p class="text-xs text-slate-400">Pendidikan</p>
+                                <p class="text-white">PeTIK Jombang (IT / PPL)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-slate-800/40 p-4 rounded-xl">
+                            <i class="fa-solid fa-location-dot text-2xl text-blue-400"></i>
+                            <div>
+                                <p class="text-xs text-slate-400">Domisili Asal</p>
+                                <p class="text-white">Bangka Belitung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: PENGALAMAN & SKILL -->
+            <div id="pengalaman" class="section-content">
+                <h2 class="text-3xl font-bold text-white mb-6 border-b border-blue-500/30 pb-3 inline-block">Pengalaman & Skill</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-blue-300 mb-4"><i class="fa-solid fa-timeline"></i> Riwayat Pengalaman</h3>
+                    <div class="border-l-2 border-blue-500 pl-6 space-y-6 relative">
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+                            <h4 class="text-lg font-bold text-white">Full-Stack Web Developer (Trainee)</h4>
+                            <span class="text-xs text-blue-400 font-medium">PeTIK Jombang | Saat ini</span>
+                            <p class="text-sm text-slate-400 mt-2">Fokus pada pengembangan frontend interaktif (HTML, CSS3, JS, Tailwind) dan backend arsitektur menggunakan Python Flask & SQLite.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+                            <h4 class="text-lg font-bold text-white">UI/UX & Frontend Designer</h4>
+                            <span class="text-xs text-blue-400 font-medium">Proyek Praktikum | 2026</span>
+                            <p class="text-sm text-slate-400 mt-2">Merancang antarmuka aplikasi berbasis web dengan prinsip desain modern (Glassmorphism, CSS Animation, Responsive Grid).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-300 mb-4"><i class="fa-solid fa-bolt"></i> Technical Skills</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-blue-900/30 border border-blue-500/20 p-4 rounded-xl text-center hover:-translate-y-2 transition-transform duration-300">
+                            <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-2"></i>
+                            <p class="font-medium text-sm">HTML5 & CSS3</p>
+                        </div>
+                        <div class="bg-blue-900/30 border border-blue-500/20 p-4 rounded-xl text-center hover:-translate-y-2 transition-transform duration-300">
+                            <i class="fa-brands fa-js text-4xl text-yellow-400 mb-2"></i>
+                            <p class="font-medium text-sm">JavaScript</p>
+                        </div>
+                        <div class="bg-blue-900/30 border border-blue-500/20 p-4 rounded-xl text-center hover:-translate-y-2 transition-transform duration-300">
+                            <i class="fa-solid fa-wind text-4xl text-cyan-400 mb-2"></i>
+                            <p class="font-medium text-sm">Tailwind CSS</p>
+                        </div>
+                        <div class="bg-blue-900/30 border border-blue-500/20 p-4 rounded-xl text-center hover:-translate-y-2 transition-transform duration-300">
+                            <i class="fa-brands fa-python text-4xl text-blue-500 mb-2"></i>
+                            <p class="font-medium text-sm">Python / Flask</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: PORTOFOLIO -->
+            <div id="portofolio" class="section-content">
+                <h2 class="text-3xl font-bold text-white mb-6 border-b border-blue-500/30 pb-3 inline-block">Portofolio Karya</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div class="bg-slate-800/50 rounded-2xl overflow-hidden border border-blue-500/20 group hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all">
+                        <div class="h-40 bg-slate-700 relative overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-900 to-slate-900">
+                            <i class="fa-solid fa-book-open-reader text-5xl text-blue-300/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-white mb-1">Sistem Peminjaman Buku</h3>
+                            <p class="text-sm text-slate-400 mb-4">Aplikasi manajemen perpus. Memiliki fitur multi-role (Admin/User), dibangun dengan Flask, SQLite, dan UI Tailwind.</p>
+                            <span class="text-xs font-semibold bg-blue-600/30 text-blue-300 px-3 py-1 rounded-full">Full-stack</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-slate-800/50 rounded-2xl overflow-hidden border border-blue-500/20 group hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all">
+                        <div class="h-40 bg-slate-700 relative overflow-hidden flex items-center justify-center bg-gradient-to-br from-indigo-900 to-slate-900">
+                            <i class="fa-solid fa-users-viewfinder text-5xl text-blue-300/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-white mb-1">SI Data Siswa SMA</h3>
+                            <p class="text-sm text-slate-400 mb-4">Aplikasi single-page berbasis manajemen Local Storage. Dilengkapi fitur statistik dinamis, modal form, dan export data.</p>
+                            <span class="text-xs font-semibold bg-blue-600/30 text-blue-300 px-3 py-1 rounded-full">Frontend App</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: CARA KERJA -->
+            <div id="cara-kerja" class="section-content">
+                <h2 class="text-3xl font-bold text-white mb-6 border-b border-blue-500/30 pb-3 inline-block">Cara Kerja Saya (SDLC)</h2>
+                <p class="text-slate-300 mb-6">Dalam mengembangkan perangkat lunak, saya sangat disiplin menerapkan metodologi pengembangan perangkat lunak yang terstruktur sebelum menulis kode produksi.</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-blue-900/20 p-5 rounded-2xl border border-blue-500/20">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.6)]">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Analisis & Blueprint (Arsitektur)</h4>
+                            <p class="text-sm text-slate-400 mt-1">Mengumpulkan kebutuhan sistem. Saya tidak langsung *ngoding*, melainkan menyusun *Flowchart*, *Pseudocode*, dan merancang skema database terlebih dahulu.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-blue-900/20 p-5 rounded-2xl border border-blue-500/20">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.6)]">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Desain Antarmuka (UI/UX)</h4>
+                            <p class="text-sm text-slate-400 mt-1">Membangun *layout* yang responsif. Saya berfokus pada palet warna (khususnya tema biru), kelancaran animasi CSS, dan visibilitas elemen (*Glassmorphism*).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-blue-900/20 p-5 rounded-2xl border border-blue-500/20">
+                        <div class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-[0_0_15px_rgba(96,165,250,0.6)] text-slate-900">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Pengembangan Cepat & Adaptif</h4>
+                            <p class="text-sm text-slate-400 mt-1">Menulis kode dengan pendekatan yang disiplin. Mengutamakan pemeliharaan kode (maintainability) dan struktur yang rapi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Navigation Logic -->
+    <script>
+        function showSection(sectionId) {
+            // Sembunyikan semua section
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            // Reset styling pada semua tombol navigasi
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600/20', 'text-blue-300', 'shadow-[0_0_10px_rgba(59,130,246,0.2)]');
+                btn.classList.add('text-slate-400');
+            });
+
+            // Tampilkan section yang dituju
+            document.getElementById(sectionId).classList.add('active');
+
+            // Aktifkan styling tombol yang diklik
+            const activeBtn = document.getElementById('btn-' + sectionId);
+            activeBtn.classList.remove('text-slate-400');
+            activeBtn.classList.add('bg-blue-600/20', 'text-blue-300', 'shadow-[0_0_10px_rgba(59,130,246,0.2)]');
+        }
+    </script>
+</body>
+</html>
